@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Soniox.Client</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Soniox</Authors>
+    <Company>Soniox</Company>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Title>Soniox Client</Title>
+    <PackageDescription>C# client library for Soniox speech recognition</PackageDescription>
+    <RepositoryUrl>https://github.com/soniox/soniox_csharp.git</RepositoryUrl> 
+    <RepositoryType>git</RepositoryType> 
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE" Pack="true" PackagePath=""/>
+    <None Include="..\..\..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.22.1" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.52.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.53.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="speech_service.proto" GrpcServices="Client" />
+  </ItemGroup>
+
+</Project>

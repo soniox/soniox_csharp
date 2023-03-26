@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# 
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "src\Soniox\Client\Client.csproj", "{DFEB72A6-66C9-40E3-8009-4FF66BE85C85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{B5602E5D-879F-445E-9C5F-C044AC8C038A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFEB72A6-66C9-40E3-8009-4FF66BE85C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFEB72A6-66C9-40E3-8009-4FF66BE85C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFEB72A6-66C9-40E3-8009-4FF66BE85C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFEB72A6-66C9-40E3-8009-4FF66BE85C85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DFEB72A6-66C9-40E3-8009-4FF66BE85C85} = {B5602E5D-879F-445E-9C5F-C044AC8C038A}
+	EndGlobalSection
+EndGlobal
