@@ -280,6 +280,7 @@ public class SpeechClient : IDisposable
         {
             ApiKey = ApiKey,
             Config = config,
+            EnableEof = true,
         };
         await call.RequestStream.WriteAsync(firstRequest, cancellationToken);
 
@@ -291,6 +292,12 @@ public class SpeechClient : IDisposable
             };
             await call.RequestStream.WriteAsync(audioRequest, cancellationToken);
         }
+
+        var eofRequest = new TranscribeAsyncRequest
+        {
+            Eof = true,
+        };
+        await call.RequestStream.WriteAsync(eofRequest, cancellationToken);
 
         await call.RequestStream.CompleteAsync();
 

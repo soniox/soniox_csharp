@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>Soniox.Client</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.3</Version>
     <Authors>Soniox</Authors>
     <Company>Soniox</Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>

@@ -45,6 +45,7 @@ message TranscribeRequest {
 message TranscribeResponse {
   Result result = 1;
   repeated Result channel_results = 2;
+  TranscriptionMetadata metadata = 3;
 }
 
 // TranscribeStream
@@ -57,6 +58,7 @@ message TranscribeStreamRequest {
 
 message TranscribeStreamResponse {
   Result result = 1;
+  TranscriptionMetadata metadata = 2;
 }
 
 // TranscribeMeeting
@@ -78,6 +80,7 @@ message TranscribeMeetingResponse {
   bool end_of_segment = 4;
   Result result = 5;
   string error = 6;
+  TranscriptionMetadata metadata = 7;
 }
 
 // TranscribeAsync
@@ -86,6 +89,8 @@ message TranscribeAsyncRequest {
   string api_key = 1;
   string reference_name = 3;
   TranscriptionConfig config = 5;
+  bool enable_eof = 6;
+  bool eof = 7;
   bytes audio = 4;
 }
 message TranscribeAsyncResponse {
@@ -98,9 +103,11 @@ message GetTranscribeAsyncStatusRequest {
   string api_key = 1;
   string file_id = 2;
 }
+
 message GetTranscribeAsyncStatusResponse {
   repeated TranscribeAsyncFileStatus files = 1;
 }
+
 message TranscribeAsyncFileStatus {
   string file_id = 1;
   string reference_name = 2;
@@ -117,9 +124,11 @@ message GetTranscribeAsyncResultRequest {
   string api_key = 1;
   string file_id = 2;
 }
+
 message GetTranscribeAsyncResultResponse {
   bool separate_recognition_per_channel = 2;
   Result result = 1;
+  TranscriptionMetadata metadata = 3;
 }
 
 // DeleteTranscribeAsyncFile
@@ -128,6 +137,7 @@ message DeleteTranscribeAsyncFileRequest {
   string api_key = 1;
   string file_id = 2;
 }
+
 message DeleteTranscribeAsyncFileResponse {
 }
 
@@ -169,6 +179,10 @@ message TranscriptionConfig {
   // Model options
   string model = 14;
   bool enable_dictation = 15;
+}
+
+message TranscriptionMetadata {
+  string package_version = 1;
 }
 
 message Result {
@@ -341,4 +355,3 @@ message RemoveSpeakerAudioRequest {
 }
 
 message RemoveSpeakerAudioResponse {}
-
